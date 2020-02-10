@@ -13,7 +13,7 @@ export const Reports = () => {
 
     return(
         
-        <table style={{color:'white'}} class="table">
+        <table style={{color:'white', textAlign: 'center'}} class="table">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -28,34 +28,20 @@ export const Reports = () => {
   </thead>
   <tbody>
   {attendance ? attendance.map((a,i) => {
-      console.log(a.fullname)
       return (<tr key= {i}>
 
                 <th scope="row">{i + 1}</th>
-                <td>{attendance.fullname}</td>
-                <td>{attendance.department}</td>
-                <td>@mdo</td>
+                <td>{a ?<a href={`report/${a.fullname}`}> {a.fullname} </a>:'---'}</td>
+                <td>{a ? a.department: '---'}</td>
+                <td>{a ? a.attendance.Monday: '---'}</td>
+                <td>{a ? a.attendance.Tuesday: '---'}</td>
+                <td>{a ? a.attendance.Wednesday: '---'}</td>
+                <td>{a ? a.attendance.Thursday: '---'}</td>
+                <td>{a ? a.attendance.Friday: '---'}</td>
             </tr>
         )
   }) : null}
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
+    
   </tbody>
 </table>
     )

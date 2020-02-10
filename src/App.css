@@ -22,6 +22,9 @@
   justify-content: center;
 
 }
+th {
+  text-align: center;
+}
 
 .App-link {
   color: #61dafb;

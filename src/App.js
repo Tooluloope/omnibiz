@@ -9,6 +9,8 @@ import {
 } from "react-router-dom";
 import { User } from './page/user.page';
 import { Reports } from './page/reports.page';
+import { Report } from './page/report.page';
+
 
 function App() {
   const empWithImage = employees
@@ -45,6 +47,9 @@ function App() {
               </Route>
               <Route exact path='/reports'>
                 <Reports />
+              </Route>
+              <Route exact path='/reports/:name'>
+                <Report />
               </Route>
             </Switch>
           </header>
